@@ -1,0 +1,81 @@
+//INKI870 MARIJA ILIEVSKA
+//Zadaca 43- dvizenje na kralica/ispishuvanje na polinjata koi shto moze da gi bie kralicata
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+   int i, k=65, j, redica, kolona;
+   char sah [9][9]; //kolonite od A-H, lokacija na kralicata, bieni pozicii
+   char broj[9]={' ','1','2','3','4','5','6','7','8'}; // redici od 1-8
+   
+   //Vrednost za redicata (1-8)
+   cout<<"Vnesete redica:";
+   cin>>redica;
+   
+   //Vrednost za kolonata (1-8)
+   cout<<"Vnesete kolona:";
+   cin>>kolona;
+   
+   // Dali pozicijata shto e izbrana e vo rangot na sahovskata tabla
+	while ((redica<1) || (redica>8) || (kolona<1) || (kolona>8))
+	{
+	cout<<" Izbranoto pole e nadvor od rangot na sahovskata tabla. Obidete se povtorno!"<<endl;
+	cin>>redica>>kolona;
+	}
+	
+   // kreiranje na matricata
+   for(i=0; i<9; i++)
+   for(j=0; j<9; j++)
+   sah[i][j]=' '; // dodeluvanje na prazni mesta vo matricata
+   
+   // prva kolona od matrica (dodeluvanje na redni broevi 1-8)
+    for(i=0; i<9; i++)
+    sah[i][0]=broj[i];
+    
+    // prva redica od matricata (dodeluvanje na bukvi A-H)
+    for(i=1; i<9; i++)
+    {
+         sah[0][i]=(char) k;
+         k=k+1;
+    }
+    // horizontalno i vertikalno dvizenje na kralicata
+    for(i=1; i<9; i++)
+    for(j=1; j<9; j++)
+    {
+        if(redica==i||kolona==j)// pozicijata shto kralicata ja bie horizontala i vertikala
+        sah[i][j]='.';
+        if(kolona==j && redica==i)// pocetna pozicija na kralicata
+        sah[i][j]='*';
+    }
+    
+    //Dijagonalno dvizenje na kralicata
+     for(j=1; j<9; j++)
+     for(i=1; i<9; i++) 
+     if (i-redica==j-kolona || j-kolona==redica-i)
+     if (i-redica==j-kolona || j-kolona==redica-i)
+     sah[i][j]='.';
+     
+
+    
+    // kreiranje na vizuelna sahovska tabla
+    cout<<endl<<endl;
+    cout<<"\n ----------------------------------------------------\n";
+    cout<<"\n S A H O V S K A   T A B L A ==> DVIZENJE NA KRALICA\n";
+    cout<<"\n -----------------------------------------------------\n";
+
+    for(i=0; i<9; i++)
+    {
+        cout<<endl<<endl;
+        cout<<"\t";
+        for(j=0; j<9; j++)
+        cout<<sah[i][j]<<"  ";
+    }
+    
+     cout<<endl<<endl;
+     system("pause");
+     
+     return 0;
+}
