@@ -1,5 +1,5 @@
 //INKI870 MARIJA ILIEVSKA
-//Zadaca 43- dvizenje na kralica/ispishuvanje na polinjata koi shto moze da gi bie kralicata
+///Dvizenje na kralica,da se ispishat poziciite koi shto kralicata gi bie, po prethodno vneseni koordintii za pocetna pozicija 
 #include <cstdlib>
 #include <iostream>
 
