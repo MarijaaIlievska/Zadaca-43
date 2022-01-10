@@ -1,5 +1,5 @@
 //INKI870 MARIJA ILIEVSKA
-///Dvizenje na kralica,da se ispishat poziciite koi shto kralicata gi bie, po prethodno vneseni koordintii za pocetna pozicija 
+//ZADACA BR:43. Dvizenje na kralica,da se ispishat poziciite koi shto kralicata gi bie, po prethodno vneseni koordintii za pocetna pozicija
 #include <cstdlib>
 #include <iostream>
 
